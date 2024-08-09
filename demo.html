@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>in-view demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta name="description" content="A web component for checking if an element is in view using Intersection Observer" />
+		<script type="module" src="in-view.js"></script>
+		<style>
+			body {
+				font-family: sans-serif;
+				max-width: 40em;
+				margin-inline: auto;
+				padding-inline: 1rem;
+			}
+
+			section {
+				margin: 3rem 0;
+			}
+
+			code {
+				font-family: monospace;
+			}
+
+			pre {
+				border: 1px solid gray;
+				border-radius: 0.5rem;
+				margin: 1rem 0;
+				padding: 1rem;
+			}
+
+			dt {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>&lt;in-view&gt;</h1>
+			<p>A web component for quick key commands</p>
+		</header>
+		<nav>
+			<ul>
+				<li>
+						<a href="https://github.com/ZicklePop/in-view">GitHub</a>
+				</li>
+				<li>
+						<a href="https://www.npmjs.com/package/@zicklepop/in-view">NPM</a>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<h2>Install</h2>
+				<p>
+					<code>npm install --save @zicklepop/in-view</code>
+				</p>
+			</section>
+			<section>
+				<h2>Properties</h2>
+				<dl>
+					<dt>data-rootMargin</dt>
+					<dd>
+						string, optional: CSS margin syntax to expand the outside area considered in view (<a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin">mdn</a>)
+					</dd>
+					<dt>data-threshold</dt>
+					<dd>
+						float, optional: Sensitivity for how much of the element must be in view, written as a decimal representation of a percentage (<a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds">mdn</a>)
+					</dd>
+				</dl>
+			</section>
+      <section>
+        <h2>Basic Usage</h2>
+        <p>To work it only requires a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">template element</a> around whatever you want to render when in view.</p>
+        <in-view>
+          <template>I show up when I'm in view!</template>
+        </in-view>
+        <pre><code>&lt;in-view&gt;
+  &lt;template&gt;
+    I show up when I'm in view!
+  &lt;/button&gt;
+&lt;/in-view&gt;</code></pre>
+      </section>
+		</main>
+		<footer>
+			<p>
+				made with love by
+				<a href="https://melaniekat.com" rel="me">melanie kat</a>
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+{
+	"name": "@zicklepop/in-view",
+	"version": "1.0.0",
+	"description": "A web component for checking if an element is in view using Intersection Observer",
+	"type": "module",
+	"main": "in-view.js",
+	"types": "in-view.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"start": "npx serve .",
+		"test": "npx @biomejs/biome check .",
+		"format": "npx @biomejs/biome check . --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zicklepop/in-view.git"
+	},
+	"author": {
+		"name": "Melanie Kat",
+		"url": "https://melaniekat.com/"
+	},
+	"license": "Unlicense",
+	"bugs": {
+		"url": "https://github.com/zicklepop/in-view/issues"
+	},
+	"homepage": "https://github.com/zicklepop/in-view#readme"
+}
