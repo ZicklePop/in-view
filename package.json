@@ -2,6 +2,10 @@
 	"name": "@zicklepop/in-view",
 	"version": "1.0.0",
 	"description": "A web component for checking if an element is in view using Intersection Observer",
+  "keywords": [
+    "web component",
+    "intersection observer"
+  ],
 	"type": "module",
 	"main": "in-view.js",
 	"types": "in-view.d.ts",
