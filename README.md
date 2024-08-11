@@ -1,6 +1,6 @@
 # in-view
 
-A web component for checking if an element is in view using Intersection Observer by wrapping a HTML template tag.
+A web component for checking if an element is in view using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) by wrapping a HTML [template tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
 
 ## Install
 

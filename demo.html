@@ -22,7 +22,8 @@
 				font-family: monospace;
 			}
 
-			pre {
+			pre,
+			.demo {
 				border: 1px solid gray;
 				border-radius: 0.5rem;
 				margin: 1rem 0;
@@ -38,7 +39,7 @@
 	<body>
 		<header>
 			<h1>&lt;in-view&gt;</h1>
-			<p>A web component for quick key commands</p>
+			<p>A web component for checking if an element is in view using <a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver">Intersection Observer</a>  by wrapping a HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">template tag</a>.</p>
 		</header>
 		<nav>
 			<ul>
@@ -73,9 +74,11 @@
       <section>
         <h2>Basic Usage</h2>
         <p>To work it only requires a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">template element</a> around whatever you want to render when in view.</p>
-        <in-view>
-          <template>I show up when I'm in view!</template>
-        </in-view>
+				<div class="demo">
+        	<in-view>
+          	<template>I show up when I'm in view!</template>
+        	</in-view>
+				</div>
         <pre><code>&lt;in-view&gt;
   &lt;template&gt;
     I show up when I'm in view!
