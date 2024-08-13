@@ -33,6 +33,15 @@
 			dt {
 				font-weight: bold;
 			}
+
+			.scrollable {
+				height: 10rem;
+				overflow: auto;
+			}
+
+			.spacing {
+				margin-bottom: 16rem;
+			}
 		</style>
 	</head>
 
@@ -76,15 +85,33 @@
         <p>To work it only requires a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">template element</a> around whatever you want to render when in view.</p>
 				<div class="demo">
         	<in-view>
-          	<template>I show up when I'm in view!</template>
+          	<template>I rendered <time-loaded></time-loaded> ago</template>
         	</in-view>
 				</div>
         <pre><code>&lt;in-view&gt;
   &lt;template&gt;
-    I show up when I'm in view!
+    I rendered &lt;time-loaded&gt;&lt;/time-loaded&gt; ago
   &lt;/button&gt;
 &lt;/in-view&gt;</code></pre>
       </section>
+			<section>
+				<h2>Scrollable Box Demo</h2>
+				<p>The box below is scrollable, scroll down to watch it render when it comes in to view.</p>
+				<div class="scrollable demo">
+					<p class="spacing">
+						🔻 Scroll down here 🔻
+					</p>
+					<in-view>
+						<template>I rendered <time-loaded></time-loaded> ago</template>
+					</in-view>
+					<p class="spacing">
+						🔻 You can keep scrolling down to see it again 🔻
+					</p>
+					<in-view>
+						<template>…and I rendered <time-loaded></time-loaded> ago</template>
+					</in-view>
+				</div>
+			</section>
 		</main>
 		<footer>
 			<p>
@@ -92,5 +119,23 @@
 				<a href="https://melaniekat.com" rel="me">melanie kat</a>
 			</p>
 		</footer>
+		<script type="module" src="https://unpkg.com/@github/relative-time-element@latest/dist/bundle.js"></script>
+		<script>
+			class TimeLoaded extends HTMLElement {
+				static tagName = "time-loaded";
+
+				static register(
+					tagName = TimeLoaded.tagName,
+					registry = globalThis.customElements,
+				) {
+					registry?.define(tagName, TimeLoaded);
+				}
+
+				connectedCallback() {
+					this.innerHTML = `<relative-time datetime="${new Date()}" format="duration" tense="past"></relative-time>`
+				}
+			}
+			TimeLoaded.register();
+		</script>
 	</body>
 </html>
